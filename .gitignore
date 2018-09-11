@@ -1,0 +1,6 @@
+# Don't ignore README.md and OSTN.... files
+!*/README.md
+
+/Java/**/*.class
+
+.DS_Store
