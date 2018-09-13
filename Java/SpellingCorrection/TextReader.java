@@ -13,14 +13,15 @@ class TextReader {
 		s = s + ' ';
 
 		for (int k = 0; k < s.length(); k++) //loop through line
-			if (s.charAt(k) != ' ') { //check space to strat new word
+			if (s.charAt(k) != ' ') { //check space to start new word
 				word = word + s.charAt(k); //constuct words
 			} else { //
 				if (word.length() > 2) { //check length of word
 					correct = cie.checkSpell(word);  //call spelling checker from CIE class
 					if (word.compareTo(correct) != 0) //compare word for misspelling
-						System.out.println("There is a misspelling in \'" + word + "\' correct spelling is: " + correct);
-						s = s.replace(word, correct); //replace misspelled word.
+						System.out.println("There is a misspelling in \'" + word + "\' at position "+ s.indexOf(word) +
+									". The correct spelling is: " + correct);
+						s = s.replaceFirst(word, correct); //replace misspelled word.
 				}
 				word = ""; //reset word variable for next iteration
 			}
