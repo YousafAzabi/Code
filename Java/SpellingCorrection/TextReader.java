@@ -1,9 +1,23 @@
+/*
+********* Yousaf Omar Azabi*********
+This code is to correct spelling mistakes in words with the letters i and e when
+they are adjacent. The rule used is "ie except c", there are an array contains
+exception words. It is a demo and does need more work as adding more exception
+words.
+The class TextReader is in charge of reading a line form keyboard letter by
+letter and call CIE class for every word to check if there is "ie" or "ei" and
+correct any misspilling of "ie" and "ei".
+*/
+
 class TextReader {
 
 	public static void main(String args[]) throws java.io.IOException {
-
+		//define parameters CIE class defined in this file
 		CIE cie = new CIE();
+		// ch used to save character read from keyboard
 		char ch;
+		//'s' used to hold line read from keyboard, 'word' used to save every word from
+		//'s' and 'correct' to hold returned correct word from CIE class.
 		String s = "", word = "", correct = "";
 
 		//loop to read a line from keyboard, one character at a time
@@ -55,7 +69,7 @@ private String checkIE(String s) {
 				}
 			}
 		}
-		return s;
+		return s; //return corrected word
 	}
 
 }
