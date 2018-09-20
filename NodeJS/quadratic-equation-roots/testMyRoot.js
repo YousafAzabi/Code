@@ -1,6 +1,10 @@
 var rootQuad = require('./QuadEqu'); //use the module QuadEqu
+let a = 1, b = 4, c = 3;
 
-var value = rootQuad.roots(1,3,4); //envoke the root function in QuadEqu
-
-//print output to console
-console.log("First root is: " + value[0] + "\n and \nSecond root is: " + value[1]);
+try{
+  value = rootQuad.roots(a,b,c);
+  console.log("\n\t***** The roots for the equation are: *****\n")
+  console.log("First root is:\t" + value[0] + "\nSecond root is:\t" + value[1]);
+} catch (e){
+  console.log('Error: "a" cannot be 0.');
+}
